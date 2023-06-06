@@ -7,7 +7,7 @@
     "jenkins": "java -Dfile.encoding=UTF8 -jar jenkins.war",
     "test": "echo \"Error: no test specified\" && exit 1",
     "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/features/*.feature'",
-    "full-regression-headless-chrome": "cypress run --headless --browser chrome --spec 'cypress/e2e/features/*.feature' & node cucumber-html-report.js",
+    "full-regression-headless-chrome": "cypress run --headless --browser chrome --spec 'cypress/e2e/features/*.feature'",
     "contact-us-tests-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/contact_us.feature'",
     "contact-us-tests-headed": "cypress run -e TAGS=\"@contact-us\" --headed",
     "contact-us-tests-headless": "cypress run -e TAGS=\"@contact-us\" --headless",
