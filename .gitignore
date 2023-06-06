@@ -1,3 +1,4 @@
 node_modules
 .vscode
-cypress
+cypress/reports
+cypress/screenshots
