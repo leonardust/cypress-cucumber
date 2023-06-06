@@ -4,7 +4,7 @@
   "description": "Cypress Cucumber Automation Framework",
   "main": "index.js",
   "scripts": {
-    "jenkins": "java -Dfile.encoding=UTF8 -jar C:/Users/lukko/jenkins.war",
+    "jenkins": "java -Dfile.encoding=UTF8 -jar jenkins.war",
     "test": "echo \"Error: no test specified\" && exit 1",
     "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/features/*.feature'",
     "full-regression-headless-chrome": "cypress run --headless --browser chrome --spec 'cypress/e2e/features/*.feature' & node cucumber-html-report.js",
