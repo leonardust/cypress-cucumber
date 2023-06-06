@@ -1,0 +1,45 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "jenkins": "java -Dfile.encoding=UTF8 -jar C:/Users/lukko/jenkins.war",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/features/*.feature'",
+    "full-regression-headless-chrome": "cypress run --headless --browser chrome --spec 'cypress/e2e/features/*.feature' & node cucumber-html-report.js",
+    "contact-us-tests-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/contact_us.feature'",
+    "contact-us-tests-headed": "cypress run -e TAGS=\"@contact-us\" --headed",
+    "contact-us-tests-headless": "cypress run -e TAGS=\"@contact-us\" --headless",
+    "login-tests-headed": "cypress run -e TAGS=\"@login\" --headed",
+    "login-and-smoke-tests-headed": "cypress run -e TAGS=\"@smoke or @login\" --headed",
+    "smoke-pack-tests-headed": "cypress run -e TAGS=\"@smoke\" --headed",
+    "regression-pack-tests-headed": "cypress run -e TAGS='@regression and not @smoke' --headed"
+  },
+  "author": "LK",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.6.0",
+    "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.3.0",
+    "ts-loader": "^9.4.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
+  }
+}
